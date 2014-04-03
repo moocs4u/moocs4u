@@ -1,0 +1,16 @@
+Project Moocs development log:
+
+2014.4.1
+1.development environment:
+    use ruby 2.0.0 and rails 4.0.0: rvm use 2.0.0
+
+2.create project moocs
+    rails new moocs
+    git init
+    git add .
+    git status
+    git commit -m 'Project MOOCS started now!'
+
+3.create course model
+    rails generate scaffold Course code:string name:string description:text length:integer image_url:string start_time:date source_url:string audit_status:boolean
+    rake db:migrate
