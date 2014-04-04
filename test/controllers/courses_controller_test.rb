@@ -3,6 +3,11 @@ require 'test_helper'
 class CoursesControllerTest < ActionController::TestCase
   setup do
     @course = courses(:one)
+    @update = {
+      name: 'Entrepreneurship 101: Who is your customer?',
+      description: 'You have an idea for a product, but do you know who will want to buy it?',
+      image_url: 'cs.jpg'
+    }
   end
 
   test "should get index" do
@@ -18,7 +23,7 @@ class CoursesControllerTest < ActionController::TestCase
 
   test "should create course" do
     assert_difference('Course.count') do
-      post :create, course: { audit_status: @course.audit_status, code: @course.code, description: @course.description, image_url: @course.image_url, length: @course.length, name: @course.name, source_url: @course.source_url, start_time: @course.start_time }
+      post :create, course: @update
     end
 
     assert_redirected_to course_path(assigns(:course))
@@ -35,7 +40,7 @@ class CoursesControllerTest < ActionController::TestCase
   end
 
   test "should update course" do
-    patch :update, id: @course, course: { audit_status: @course.audit_status, code: @course.code, description: @course.description, image_url: @course.image_url, length: @course.length, name: @course.name, source_url: @course.source_url, start_time: @course.start_time }
+    patch :update, id: @course, course: @update
     assert_redirected_to course_path(assigns(:course))
   end
 
