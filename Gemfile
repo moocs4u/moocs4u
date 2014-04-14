@@ -42,4 +42,9 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
+
+# Added by Hsing @ 2014.4.8 to get photo attachment fearture
+# Begin
+gem "paperclip", "~> 4.1"
+# End
 # gem 'debugger', group: [:development, :test]

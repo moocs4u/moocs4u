@@ -4,7 +4,7 @@
 <% @courses.each do |course| %>
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
     <td>
-      <%= image_tag(course.image_url, class: 'list_image') %> 
+      <%= image_tag(course.course_image.url(:medium), class: 'list_image') %> 
     </td>
     <td class="list_description"> 
       <dl>

@@ -26,4 +26,10 @@ Moocs::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+  
+  # Added by Hsiung @2014.4.8 to get photo attachment feature
+  # Begin
+  Paperclip.options[:command_path]="/usr/local/bin/"
+  # End
+  # End
 end

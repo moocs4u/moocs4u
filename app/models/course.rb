@@ -1,7 +1,6 @@
 class Course < ActiveRecord::Base
-  validates :name, :description, :image_url, presence: true
-  validates :image_url, allow_blank: true, format: {
-    with: %r{\.(gif|jpg|png)\Z}i,
-    message: 'must be a URL for GIF, JPG or PNG image.'
-  }
+  has_attached_file :course_image, :styles => { :medium => "262x136>" }, :default_url => "/images/:style/missing.jpg"
+  validates_attachment_content_type :course_image, :content_type => /\Aimage\/.*\Z/
+  validates :name, :description, presence: true
+  validates :length, numericality: { only_integer: true, greater_than_or_equal_to: 1}
 end

@@ -2,15 +2,26 @@ Project Moocs development log:
 
 2014.4.1
 1.development environment:
-    use ruby 2.0.0 and rails 4.0.0: rvm use 2.0.0
+    use ruby 2.0.0 and rails 4.0.0: $ rvm use 2.0.0
 
 2.create project moocs
-    rails new moocs
-    git init
-    git add .
-    git status
-    git commit -m 'Project MOOCS started now!'
+    $ rails new moocs
+    $ git init
+    $ git add .
+    $ git status
+    $ git commit -m 'Project MOOCS started now!'
 
 3.create course model
-    rails generate scaffold Course code:string name:string description:text length:integer image_url:string start_time:date source_url:string audit_status:boolean
-    rake db:migrate
+    $ rails generate scaffold Course code:string name:string description:text length:integer image_url:string start_time:date source_url:string audit_status:boolean
+    $ rake db:migrate
+
+4.add paperclip plugin
+    installation: imagemagick, and modify Gemfile, and run bundle install
+    $ rails generate migration add_course_image_to_courses
+    write up and down method
+    $ rake db:migrate
+    modify course.rb: has_attachment_file file stored at public/system/... (you have to create a new directory name system under directory public)
+    ! A hole for attack
+
+5.
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401083717) do
+ActiveRecord::Schema.define(version: 20140411082621) do
 
   create_table "courses", force: true do |t|
     t.string   "code"
@@ -24,6 +24,10 @@ ActiveRecord::Schema.define(version: 20140401083717) do
     t.boolean  "audit_status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "course_image_file_name"
+    t.string   "course_image_content_type"
+    t.integer  "course_image_file_size"
+    t.datetime "course_image_updated_at"
   end
 
 end
